@@ -1,0 +1,49 @@
+<Encode>
+0 = grass (move able)
+1 = rock (unbreakable)
+2 = container (breakable, drop random item)
+3 = boom
+4 = portal (for completed a level, jump to portal to end this level)
+5 = speed item (speed up player for %f second)
+6 = flame item (extend boom flame size)
+7 = bomb item (more bomb in backpack)
+8 = shield item (protect)
+
+players as a ArrayList<Player>
+
+<Config>
+[Settings]
+enemy lv1/lv2/lv3 spawn rate = as config_map.txt
+
+[portal]
+portal spawn_rate = 25%
+portal count = 1
+
+[buff]
+buff speed = x2
+buff flame = +1
+buff bomb = +1 current bomb, max bomb = 4
+buff spawn_rate = 55%
+
+[player]
+player speed = 3 (unit)
+player bomb slot = 3 (bomb)
+player bomb flame size = 2 (cell)
+player ultimate = none
+
+[spider] //level 2 - medium bot
+spider speed = 3 (unit)
+spider ultimate duration = 5 (second)
+spider ultimate cool down = 2 (second)
+spider ultimate = chasing player, speed +0.5
+collision make player dead = true
+
+[turtle] //level 1 - stupid bot
+turtle speed = 3 (unit)
+turtle ultimate = none
+collision make player dead = true
+
+[golem]
+golem speed = 3 (unit)
+golem ultimate = none
+collision make player dead = false
